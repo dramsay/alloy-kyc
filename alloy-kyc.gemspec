@@ -6,7 +6,7 @@ require 'alloy/kyc/version'
 Gem::Specification.new do |spec|
   spec.name          = "alloy-kyc"
   spec.version       = Alloy::KYC::VERSION
-  spec.authors       = ["Doug Ramsay"]
+  spec.authors       = ["Doug Ramsay", "Tom Copeland"]
   spec.email         = ["doug@qedinvestors.com"]
 
   spec.summary       = %q{Gem to wrap the Alloy.co API}
