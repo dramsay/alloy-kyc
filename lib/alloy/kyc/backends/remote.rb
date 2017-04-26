@@ -11,7 +11,7 @@ module Alloy
 
         def get_bearer_token
           conn.basic_auth(Alloy::KYC.configuration.application_token, Alloy::KYC.configuration.application_secret)
-          response = conn.post("/oauth/bearer")
+          response = conn.post("oauth/bearer")
           token_info = JSON.parse(response.body)
           @bearer_token = BearerToken.new(token_info["access_token"], token_info["expires_in"])
         end
@@ -28,7 +28,7 @@ module Alloy
 
         # domain methods
         def create_evaluation(params)
-          post("/evaluations", params)
+          post("evaluations", params)
         end
 
         def submit_oow_responses(path, responses)

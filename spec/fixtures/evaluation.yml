@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.alloy.co/evaluations
+    uri: https://sandbox.alloy.co/v1/evaluations
     body:
       encoding: UTF-8
       string: address_city=Richmond&address_country_code=US&address_line_1=1717+E+Test+St&address_postal_code=23220&address_state=VA&birth_date=1985-01-23&document_ssn=123456789&email_address=tommy%40alloy.co&name_first=Thomas&name_last=Nicholas&phone_number=18042562188&social_twitter=tommyrva

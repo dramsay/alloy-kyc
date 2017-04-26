@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.alloy.co/evaluations/S-ds1uAPbr4AK6x9ojkcda
+    uri: https://sandbox.alloy.co/v1/evaluations/S-ds1uAPbr4AK6x9ojkcda
     body:
       encoding: UTF-8
       string: ''

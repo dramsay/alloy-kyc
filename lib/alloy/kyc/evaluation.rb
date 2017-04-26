@@ -33,12 +33,12 @@ module Alloy
       # name_first: "Charles",
       # name_last: "Hearn"}
       def submit_oow_responses(responses)
-        response = Alloy::KYC.configuration.backend.submit_oow_responses("/evaluations/#{self.evaluation_token}", responses)
+        response = Alloy::KYC.configuration.backend.submit_oow_responses("evaluations/#{self.evaluation_token}", responses)
         self.class.new(JSON.parse(response.body))
       end
 
       def fork
-        response = Alloy::KYC.configuration.backend.fork_evaluation("/evaluations/#{self.evaluation_token}")
+        response = Alloy::KYC.configuration.backend.fork_evaluation("evaluations/#{self.evaluation_token}")
         self.class.new(JSON.parse(response.body))
       end
 

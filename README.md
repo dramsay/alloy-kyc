@@ -22,6 +22,7 @@ Configure the gem using your issued Alloy credentials in an initializer file. Fo
 Alloy::KYC.configure do |config|
   config.application_token = ENV['ALLOY_APPLICATION_TOKEN']
   config.application_secret = ENV['ALLOY_APPLICATION_SECRET']
+  config.api_endpoint = "https://alloy.co/v1/"
 end
 ```
 

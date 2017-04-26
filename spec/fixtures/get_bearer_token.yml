@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.alloy.co/oauth/bearer
+    uri: https://sandbox.alloy.co/v1/oauth/bearer
     body:
       encoding: UTF-8
       string: ''

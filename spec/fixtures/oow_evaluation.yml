@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://sandbox.alloy.co/evaluations
+    uri: https://sandbox.alloy.co/v1/evaluations
     body:
       encoding: UTF-8
       string: address_city=Washington&address_country_code=US&address_line_1=1717+E+Test+St&address_postal_code=20005&address_state=DC&birth_date=1985-01-01&document_ssn=123456789&name_first=John&name_last=Doe&phone_number=8005551212
