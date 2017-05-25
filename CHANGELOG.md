@@ -1,5 +1,8 @@
+* May 25, 2017 - 0.1.3
+Add support for manual review and denials
+
 * April 26, 2017 - 0.1.2
-Allow clients to use path prefixes.
+Allow clients to use path prefixes
 
 * April 11, 2017 - 0.1.1
 Adding Tom Copeland to authors
