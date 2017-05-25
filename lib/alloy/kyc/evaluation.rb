@@ -20,6 +20,14 @@ module Alloy
         summary["result"] == "success" && status_code == 206
       end
 
+      def denied?
+        summary['result'] == "success" && status_code != 206 && summary['outcome'] == "denied"
+      end
+
+      def manual_review?
+        summary['result'] == "success" && status_code != 206 && summary['outcome'] == "manual review"
+      end
+
       def requires_oow?
         !!self.required
       end

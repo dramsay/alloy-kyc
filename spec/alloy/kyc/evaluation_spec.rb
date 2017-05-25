@@ -13,12 +13,36 @@ describe Alloy::KYC::Evaluation do
     end
   end
 
+  describe '#manual_review?' do
+    it 'returns true if summary result is "manual_review"' do
+      VCR.use_cassette("get_bearer_token", record: :once) do
+        VCR.use_cassette("manual_review_evaluation", record: :once) do
+          e = Alloy::KYC::Evaluation.create(evaluation_data)
+          expect(e.manual_review?).to be true
+          expect(e.denied?).not_to be true
+        end
+      end
+    end
+  end
+
+  describe '#denied?' do
+    it 'returns true if summary result is "denied"' do
+      VCR.use_cassette("get_bearer_token", record: :once) do
+        VCR.use_cassette("denied_evaluation", record: :once) do
+          e = Alloy::KYC::Evaluation.create(evaluation_data)
+          expect(e.denied?).to be true
+          expect(e.manual_review?).not_to be true
+        end
+      end
+    end
+  end
+
   describe "#success?" do
     it "should return true if summary result == 'success' and status_code is not 206" do
       evaluation = create_evaluation
       expect(evaluation.summary["result"]).to eq("success")
       expect(evaluation.status_code).to eq(201)
-      expect(evaluation.success?).to eq(true)
+      expect(evaluation.success?).to be true
     end
   end
 
@@ -28,7 +52,7 @@ describe Alloy::KYC::Evaluation do
       evaluation.status_code = 206
       expect(evaluation.summary["result"]).to eq("success")
       expect(evaluation.status_code).to eq(206)
-      expect(evaluation.partial_success?).to eq(true)
+      expect(evaluation.partial_success?).to be true
     end
   end
 
