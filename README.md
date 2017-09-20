@@ -23,6 +23,8 @@ Alloy::KYC.configure do |config|
   config.application_token = ENV['ALLOY_APPLICATION_TOKEN']
   config.application_secret = ENV['ALLOY_APPLICATION_SECRET']
   config.api_endpoint = "https://alloy.co/v1/"
+  config.open_timeout = 1 # default is 2 seconds
+  config.read_timeout = 3 # default is 5 seconds
 end
 ```
 

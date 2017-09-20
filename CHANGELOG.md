@@ -1,3 +1,6 @@
+* Sep 20, 2017 - 0.1.4
+Add support for read and open timeouts
+
 * May 25, 2017 - 0.1.3
 Add support for manual review and denials
 

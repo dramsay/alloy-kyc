@@ -6,7 +6,12 @@ module Alloy
         attr_reader :bearer_token
 
         def conn
-          @conn ||= Faraday.new(url: "#{Alloy::KYC.configuration.api_endpoint}")
+          if @conn.nil?
+            @conn = Faraday.new(url: "#{Alloy::KYC.configuration.api_endpoint}")
+            @conn.options.open_timeout = Alloy::KYC.configuration.open_timeout
+            @conn.options.timeout = Alloy::KYC.configuration.read_timeout
+          end
+          @conn
         end
 
         def get_bearer_token
