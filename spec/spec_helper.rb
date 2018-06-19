@@ -16,6 +16,14 @@ def create_evaluation
   end
 end
 
+def fetch_evaluation
+  VCR.use_cassette("get_bearer_token", record: :once, match_requests_on: [:host, :path]) do
+    VCR.use_cassette("fetch_evaluation", record: :once, match_requests_on: [:host, :path]) do
+      Alloy::KYC::Evaluation.fetch("entity_token", "evaluation_token")
+    end
+  end
+end
+
 def evaluation_data
   {
     phone_number: "18042562188",

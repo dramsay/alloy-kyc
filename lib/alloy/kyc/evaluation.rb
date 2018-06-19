@@ -7,6 +7,11 @@ module Alloy
         new(JSON.parse(response.body))
       end
 
+      def self.fetch(entity_token, evaluation_token)
+        response = Alloy::KYC.configuration.backend.fetch_evaluation(entity_token, evaluation_token)
+        new(JSON.parse(response.body))
+      end
+
       def initialize(response)
         super(response)
         self.raw_response = response

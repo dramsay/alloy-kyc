@@ -29,6 +29,14 @@ module Alloy
           end
         end
 
+        def fetch_evaluation(entity_token, evaluation_token)
+          if !params[:document_ssn].nil? && params[:document_ssn] == "111223333"
+            wrap_in_struct(database[:create_evaluations][:requires_oow])
+          else
+            wrap_in_struct(database[:create_evaluations][:success])
+          end
+        end
+
         def submit_oow_responses(path, responses)
           if responses[:document_ssn] == "111223333"
             wrap_in_struct(database[:submit_oow_responses][:requires_oow])
