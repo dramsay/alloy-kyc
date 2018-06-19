@@ -1,3 +1,6 @@
+* June 19, 2018 - 0.1.5
+Add support for fetching evaluations
+
 * Sep 20, 2017 - 0.1.4
 Add support for read and open timeouts
 

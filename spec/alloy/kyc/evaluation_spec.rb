@@ -13,6 +13,14 @@ describe Alloy::KYC::Evaluation do
     end
   end
 
+  describe '.fetch' do
+    it "returns a valid response" do
+      evaluation = fetch_evaluation
+      expect(evaluation.status_code).to eq(201)
+      expect(evaluation.error).to be_nil
+    end
+  end
+
   describe '#manual_review?' do
     it 'returns true if summary result is "manual_review"' do
       VCR.use_cassette("get_bearer_token", record: :once) do

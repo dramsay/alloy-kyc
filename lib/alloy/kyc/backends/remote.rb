@@ -32,6 +32,10 @@ module Alloy
         end
 
         # domain methods
+        def fetch_evaluation(entity_token, evaluation_token)
+          get("entities/#{entity_token}/evaluations/#{evaluation_token}")
+        end
+
         def create_evaluation(params)
           post("evaluations", params)
         end
